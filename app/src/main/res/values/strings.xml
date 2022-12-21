@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">HCW Assists</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="app_name">HealthCareWorker Assists</string>
+    <string name="title_home">Patients</string>
+    <string name="title_dashboard">Statistics</string>
+    <string name="title_notifications">Info</string>
 </resources>
