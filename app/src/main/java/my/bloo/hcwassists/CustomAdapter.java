@@ -34,8 +34,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     private Activity activity;
     private ArrayList patient_id, patient_name, patient_age, patient_dob;
 
-    CustomAdapter(Activity activity, Context context, ArrayList book_id, ArrayList patient_name, ArrayList patient_age,
-                  ArrayList patient_dob){
+    public CustomAdapter(Activity activity, Context context, ArrayList book_id, ArrayList patient_name, ArrayList patient_age,
+                         ArrayList patient_dob){
         this.activity = activity;
         this.context = context;
         this.patient_id = book_id;

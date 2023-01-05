@@ -19,7 +19,7 @@ import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
-class MyDatabaseHelper extends SQLiteOpenHelper {
+public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     private Context context;
     private static final String DATABASE_NAME = "Patients.db";
@@ -31,7 +31,7 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_AGE = "age";
     private static final String COLUMN_DOB = "dob";
 
-    MyDatabaseHelper(@Nullable Context context) {
+    public MyDatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
     }
@@ -66,7 +66,7 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    Cursor readAllData(){
+    public Cursor readAllData(){
         String query = "SELECT * FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getReadableDatabase();
 
