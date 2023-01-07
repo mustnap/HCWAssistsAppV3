@@ -31,6 +31,14 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_AGE = "age";
     private static final String COLUMN_DOB = "dob";
 
+
+    private static final String TABLE_NAME2 = "patient_reading";
+    private static final String COLUMN_ID2 = "_id";
+    private static final String COLUMN_NAME2 = "name";
+    private static final String COLUMN_AGE2 = "age";
+    private static final String COLUMN_DOB2 = "dob";
+
+
     public MyDatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
@@ -39,6 +47,11 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TABLE_NAME +
+                " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_NAME + " TEXT, " +
+                COLUMN_AGE + " INTEGER, " +
+                COLUMN_DOB + " TEXT);";
+        String query2 = "CREATE TABLE " + TABLE_NAME +
                 " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_NAME + " TEXT, " +
                 COLUMN_AGE + " INTEGER, " +
