@@ -69,7 +69,6 @@ public class HomeFragment extends Fragment {
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-
 //        final TextView textView = binding.textHome;
 //        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;

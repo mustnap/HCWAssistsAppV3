@@ -14,7 +14,7 @@
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
@@ -25,6 +25,31 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textSize="15dp"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="Patient ID: "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tvPatientID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="-"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textSize="20dp" />
+            </LinearLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/text_input_spo2_01_layout"
@@ -37,9 +62,9 @@
                     android:id="@+id/text_input_spo2_01"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:maxLength="3"
                     android:hint="Enter SpO2"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:maxLength="3" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -54,9 +79,9 @@
                     android:id="@+id/text_input_bp_01"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:maxLength="4"
                     android:hint="Enter systolic blood pressure (mmHg)"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:maxLength="4" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -71,9 +96,9 @@
                     android:id="@+id/text_input_hr_01"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:maxLength="4"
                     android:hint="Enter heart rate (bpm)"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:maxLength="4" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -89,9 +114,9 @@
                     android:id="@+id/text_input_resp_01"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:maxLength="4"
                     android:hint="Enter respiratory rate (bpm)"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:maxLength="4" />
             </com.google.android.material.textfield.TextInputLayout>
 
 

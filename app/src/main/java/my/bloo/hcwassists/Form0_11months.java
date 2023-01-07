@@ -3,10 +3,12 @@ package my.bloo.hcwassists;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
@@ -17,7 +19,6 @@ public class Form0_11months extends AppCompatActivity {
     RadioGroup tempRange_radioGroup, consciousLevel_radioGroup, oxygenDelivery_radioGroup, capilary_radioGroup;
 
     int intRb01, intRb02, intRb03, intRb04, intRb05;
-
     int intSpo2Score, intBloodPressureScore, intHearRateScore, intRespiratoryScore, intTempRangeScore, intConsciousScore, intOxygenScore, intCapilaryScore;
 
     Button calc_button;
@@ -27,8 +28,7 @@ public class Form0_11months extends AppCompatActivity {
     int checkedRadioGroupConsciusLevel, intConsciousOptionSelected;
     int checkedRadioGroupTemperature, intTemperatureOptionSelected;
 
-
-    String id, result, age, dob;
+    TextView patientId_tV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,14 +36,16 @@ public class Form0_11months extends AppCompatActivity {
         setContentView(R.layout.activity_form011months);
 
         calc_button = findViewById(R.id.btnCalc_01);
-
+        getAndSetIntentData();
         calc_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 confirmDialog2();
                 MyDatabaseHelper myDB = new MyDatabaseHelper(getApplicationContext());
                 int totalScore = intSpo2Score + intBloodPressureScore + intHearRateScore + intRespiratoryScore + intTempRangeScore + intConsciousScore + intOxygenScore + intCapilaryScore;
-                myDB.addReadings("1", "100", "1", "90", "3", "100", "0");
+
+                patientId_tV = findViewById(R.id.tvPatientID);
+                myDB.addReadings(patientId_tV.getText().toString(), "100", "1", "90", "3", "100", "0", totalScore);
             }
         });
 
@@ -321,5 +323,22 @@ public class Form0_11months extends AppCompatActivity {
         }
 
 
+    }
+
+    void getAndSetIntentData() {
+
+        String patient_id;
+
+        if (getIntent().hasExtra("patient_id")) {
+            //Getting Data from Intent
+            patient_id = getIntent().getStringExtra("patient_id");
+
+            TextView tvPatientID = findViewById(R.id.tvPatientID);
+            //Setting Intent Data
+            tvPatientID.setText(patient_id);
+
+        } else {
+            Toast.makeText(this, "No data.", Toast.LENGTH_SHORT).show();
+        }
     }
 }

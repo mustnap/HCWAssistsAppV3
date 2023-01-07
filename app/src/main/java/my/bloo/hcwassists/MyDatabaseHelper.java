@@ -117,7 +117,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    void addReadings(String patient_id, String spo2_reading, String spo2_score, String bp_reading, String bp_score, String hr_reading, String hr_score){
+    void addReadings(String patient_id, String spo2_reading, String spo2_score, String bp_reading, String bp_score, String hr_reading, String hr_score, int total_score){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -129,6 +129,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_SPO2_READING, spo2_reading);
         cv.put(COLUMN_SPO2_SCORE, spo2_score);
         cv.put(COLUMN_READING_DATETIME, now.toString());
+        cv.put(COLUMN_TOTAL_SCORE,total_score );
+
         long result = db.insert(TABLE_NAME2,null, cv);
         if(result == -1){
             Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
