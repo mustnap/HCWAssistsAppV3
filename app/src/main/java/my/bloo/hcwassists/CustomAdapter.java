@@ -65,20 +65,18 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             public void onClick(View view) {
                 Intent intent;
                 int thisPatientAge = Integer.valueOf(  getAgeInMonths(String.valueOf(patient_dob.get(position))) );
-//                if(  thisPatientAge >= 0 && thisPatientAge < 12 ) {
-//                    intent = new Intent(context, Form0_11months.class);
-//                } else if ( thisPatientAge >= 12 && thisPatientAge < 23  ) {
-//                    intent = new Intent(context, Form12_23months.class);
-//                } else if ( thisPatientAge >= 24 && thisPatientAge < 60  ) {
-//                    intent = new Intent(context, Form24_59months.class);
-//                } else if ( thisPatientAge >= 60 && thisPatientAge < 144  ) {
-//                    intent = new Intent(context, Form60_143months.class);
-//                } else {
-//                    intent = new Intent(context, Form144above_months.class);
-//                }
+                if(  thisPatientAge >= 0 && thisPatientAge < 12 ) {
+                    intent = new Intent(context, Form0_11months.class);
+                } else if ( thisPatientAge >= 12 && thisPatientAge < 23  ) {
+                    intent = new Intent(context, Form12_23months.class);
+                } else if ( thisPatientAge >= 24 && thisPatientAge < 60  ) {
+                    intent = new Intent(context, Form24_59months.class);
+                } else if ( thisPatientAge >= 60 && thisPatientAge < 144  ) {
+                    intent = new Intent(context, Form60_143months.class);
+                } else {
+                    intent = new Intent(context, Form144above_months.class);
+                }
 
-
-                intent = new Intent(context, MainActivity.class);
 
                 intent.putExtra("id", String.valueOf(patient_id.get(position)));
                 intent.putExtra("name", String.valueOf(patient_name.get(position)));
