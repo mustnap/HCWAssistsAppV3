@@ -125,11 +125,11 @@ public class Form24_59months extends AppCompatActivity {
     void calculateTemperature() {
         tempRange_radioGroup = (RadioGroup) findViewById(R.id.radioGroupTempRange_03);
         checkedRadioGroupTemperature = tempRange_radioGroup.getCheckedRadioButtonId();
-        intRb01 = findViewById(R.id.rBtn02_tR_01_Less365).getId();
-        intRb02 = findViewById(R.id.rBtn02_tR_02_36_37).getId();
-        intRb03 = findViewById(R.id.rBtn02_tR_03_375_379).getId();
-        intRb04 = findViewById(R.id.rBtn02_tR_04_38_39).getId();
-        intRb05 = findViewById(R.id.rBtn02_tR_05_40_above).getId();
+        intRb01 = findViewById(R.id.rBtn03_tR_01_Less365).getId();
+        intRb02 = findViewById(R.id.rBtn03_tR_02_36_37).getId();
+        intRb03 = findViewById(R.id.rBtn03_tR_03_375_379).getId();
+        intRb04 = findViewById(R.id.rBtn03_tR_04_38_39).getId();
+        intRb05 = findViewById(R.id.rBtn03_tR_05_40_above).getId();
 
         int selected = -1;
         if (checkedRadioGroupTemperature == intRb01) {
@@ -163,10 +163,10 @@ public class Form24_59months extends AppCompatActivity {
     void calculateConsciousLevel() {
         consciousLevel_radioGroup = (RadioGroup) findViewById(R.id.radioGroupConscious_03);
         checkedRadioGroupConsciusLevel = consciousLevel_radioGroup.getCheckedRadioButtonId();
-        intRb01 = findViewById(R.id.rBtn02_cL_01_alert).getId();
-        intRb02 = findViewById(R.id.rBtn02_cL_02_verbal).getId();
-        intRb03 = findViewById(R.id.rBtn02_cL_03_pain).getId();
-        intRb04 = findViewById(R.id.rBtn02_cL_04_unconscious).getId();
+        intRb01 = findViewById(R.id.rBtn03_cL_01_alert).getId();
+        intRb02 = findViewById(R.id.rBtn03_cL_02_verbal).getId();
+        intRb03 = findViewById(R.id.rBtn03_cL_03_pain).getId();
+        intRb04 = findViewById(R.id.rBtn03_cL_04_unconscious).getId();
 
         int selected = -1;
         if (checkedRadioGroupConsciusLevel == intRb01) {
@@ -200,11 +200,11 @@ public class Form24_59months extends AppCompatActivity {
     void calculateOxygen() {
         oxygenDelivery_radioGroup = (RadioGroup) findViewById(R.id.radioGroupOxygen_03);
         checkedRadioGroupOxygen = oxygenDelivery_radioGroup.getCheckedRadioButtonId();
-        intRb01 = findViewById(R.id.rBtn02_oD_01_room).getId();
-        intRb02 = findViewById(R.id.rBtn02_oD_02_nasal).getId();
-        intRb03 = findViewById(R.id.rBtn02_oD_03_cpap).getId();
-        intRb04 = findViewById(R.id.rBtn02_cL_04_nippv).getId();
-        intRb05 = findViewById(R.id.rBtn02_cL_05_ventilated).getId();
+        intRb01 = findViewById(R.id.rBtn03_oD_01_room).getId();
+        intRb02 = findViewById(R.id.rBtn03_oD_02_nasal).getId();
+        intRb03 = findViewById(R.id.rBtn03_oD_03_cpap).getId();
+        intRb04 = findViewById(R.id.rBtn03_cL_04_nippv).getId();
+        intRb05 = findViewById(R.id.rBtn03_cL_05_ventilated).getId();
 
         int selected = -1;
         if (checkedRadioGroupOxygen == intRb01) {
@@ -241,9 +241,9 @@ public class Form24_59months extends AppCompatActivity {
         capilary_radioGroup = (RadioGroup) findViewById(R.id.radioGroupCapilary_03);
 
         checkedRadioGroupCapilary = capilary_radioGroup.getCheckedRadioButtonId();
-        intRb01 = findViewById(R.id.rBtn02_capR_01_less2).getId();
-        intRb02 = findViewById(R.id.rBtn02_capR_02_3_4sec).getId();
-        intRb03 = findViewById(R.id.rBtn02_capR_03_5sec).getId();
+        intRb01 = findViewById(R.id.rBtn03_capR_01_less2).getId();
+        intRb02 = findViewById(R.id.rBtn03_capR_02_3_4sec).getId();
+        intRb03 = findViewById(R.id.rBtn03_capR_03_5sec).getId();
 
         int selected = -1;
         if (checkedRadioGroupCapilary == intRb01) {

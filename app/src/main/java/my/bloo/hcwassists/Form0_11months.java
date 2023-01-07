@@ -41,6 +41,9 @@ public class Form0_11months extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 confirmDialog2();
+                MyDatabaseHelper myDB = new MyDatabaseHelper(getApplicationContext());
+                int totalScore = intSpo2Score + intBloodPressureScore + intHearRateScore + intRespiratoryScore + intTempRangeScore + intConsciousScore + intOxygenScore + intCapilaryScore;
+                myDB.addReadings("1", "100", "1", "90", "3", "100", "0");
             }
         });
 
