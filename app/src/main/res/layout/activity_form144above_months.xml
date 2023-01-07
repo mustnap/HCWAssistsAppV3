@@ -1,9 +1,275 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".Form144above_months">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvFormIdentifier05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Age 12years above"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_spo2_05_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true"
+                app:layout_constraintTop_toTopOf="@+id/tvFormIdentifier05">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/text_input_spo2_05"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="3"
+                    android:hint="Enter SpO2"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_bp_05_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:counterMaxLength="4"
+                app:errorEnabled="true"
+                app:layout_constraintTop_toTopOf="@+id/text_input_spo2_05">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/text_input_bp_05"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="4"
+                    android:hint="Enter systolic blood pressure (mmHg)"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_hr_05_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:counterMaxLength="4"
+                app:errorEnabled="true"
+                app:layout_constraintTop_toTopOf="@+id/text_input_bp_05">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/text_input_hr_05"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="4"
+                    android:hint="Enter heart rate (bpm)"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_resp_05_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:counterMaxLength="4"
+                app:errorEnabled="true"
+                app:layout_constraintTop_toTopOf="@+id/text_input_hr_05">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/text_input_resp_05"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="4"
+                    android:hint="Enter respiratory rate (bpm)"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:id="@+id/tVTemperatureRange_05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Temperature Range"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textSize="20dp"
+                app:layout_constraintTop_toTopOf="@+id/text_input_resp_05" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupTempRange_05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tVTemperatureRange_05">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rBtn05_tR_01_Less365"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Less than 36.5" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rBtn05_tR_02_36_37"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Between 36-37.4" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rBtn05_tR_03_375_379"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Between 37.5-37.9" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rBtn05_tR_04_38_39"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Between 38-39" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rBtn05_tR_05_40_above"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="40 and above" />
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/tVConsciousLevel_05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Conscious Level"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textSize="20dp"
+                app:layout_constraintTop_toTopOf="@+id/radioGroupTempRange_05" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupConscious_05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tVConsciousLevel_05">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rBtn05_cL_01_alert"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Alert" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rBtn05_cL_02_verbal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Verbal" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rBtn05_cL_04_pain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pain" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rBtn05_cL_04_unconscious"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Unconscious" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tVOxygenDelivery_05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Oxygen Delivery"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textSize="20dp"
+                app:layout_constraintTop_toTopOf="@+id/radioGroupConscious_05" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupOxygen_05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tVOxygenDelivery_05">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rBtn05_oD_01_room"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Room air" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rBtn05_oD_02_nasal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nasal prong" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rBtn05_oD_03_cpap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cpap" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rBtn05_cL_04_nippv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nippv" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rBtn05_cL_05_ventilated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ventilated" />
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/tVCapilary_05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Capilary Refill Time"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textSize="20dp"
+                app:layout_constraintTop_toTopOf="@+id/radioGroupOxygen_05" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupCapilary_05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tVCapilary_05">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rBtn05_capR_01_less2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Less than 2 sec" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rBtn05_capR_02_3_4sec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="3-4 sec" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rBtn05_capR_03_5sec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="5 sec or more" />
+
+            </RadioGroup>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCalc_05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Current Assessment"
+                app:layout_constraintTop_toBottomOf="@id/radioGroupCapilary_05" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

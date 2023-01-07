@@ -38,7 +38,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:maxLength="3"
-                    android:hint="Enter Spo2"
+                    android:hint="Enter SpO2"
                     android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
