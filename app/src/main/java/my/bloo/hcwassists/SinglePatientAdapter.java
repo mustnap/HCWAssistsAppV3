@@ -39,7 +39,7 @@ public class SinglePatientAdapter extends RecyclerView.Adapter<SinglePatientAdap
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.reading_row, parent, false);
+        View view = inflater.inflate(R.layout.single_patient_reading_row, parent, false);
         return new MyViewHolder(view);
     }
 

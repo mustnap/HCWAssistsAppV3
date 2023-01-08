@@ -37,6 +37,11 @@ public class Form24_59months extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form2459months);
 
+        if (getIntent().hasExtra("patient_name")) {
+            //Getting Data from Intent
+            getSupportActionBar().setTitle("Enter Reading for: " + getIntent().getStringExtra("patient_name"));
+        };
+
         calc_button = findViewById(R.id.btnCalc_03);
         getAndSetIntentData();
         calc_button.setOnClickListener(new View.OnClickListener() {

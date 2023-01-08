@@ -27,11 +27,11 @@ public class ReadingAdapter extends RecyclerView.Adapter<ReadingAdapter.MyViewHo
     private Activity activity;
     private ArrayList patient_id, patient_name, patient_age, patient_dob;
 
-    public ReadingAdapter(Activity activity, Context context, ArrayList book_id, ArrayList patient_name, ArrayList patient_age,
+    public ReadingAdapter(Activity activity, Context context, ArrayList patient_id, ArrayList patient_name, ArrayList patient_age,
                           ArrayList patient_dob){
         this.activity = activity;
         this.context = context;
-        this.patient_id = book_id;
+        this.patient_id = patient_id;
         this.patient_name = patient_name;
         this.patient_age = patient_age;
         this.patient_dob = patient_dob;
@@ -41,18 +41,15 @@ public class ReadingAdapter extends RecyclerView.Adapter<ReadingAdapter.MyViewHo
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.my_row, parent, false);
+        View view = inflater.inflate(R.layout.reading_list_row, parent, false);
         return new MyViewHolder(view);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, @SuppressLint("RecyclerView") final int position) {
-        holder.patient_id_txt.setText(String.valueOf(patient_id.get(position)));
-        holder.patient_name_txt.setText(String.valueOf(patient_name.get(position)));
-        holder.patient_age_txt.setText(String.valueOf(patient_age.get(position)));
-        holder.patient_dob_txt.setText(String.valueOf(patient_dob.get(position)));
-
+        holder.patient_id_txt2.setText(String.valueOf(patient_id.get(position)));
+        holder.patient_name_txt2.setText(String.valueOf(patient_name.get(position)));
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,15 +75,13 @@ public class ReadingAdapter extends RecyclerView.Adapter<ReadingAdapter.MyViewHo
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView patient_id_txt, patient_name_txt, patient_age_txt, patient_dob_txt;
+        TextView patient_id_txt2, patient_name_txt2;
         LinearLayout mainLayout;
 
         MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            patient_id_txt = itemView.findViewById(R.id.patient_id_txt);
-            patient_name_txt = itemView.findViewById(R.id.patient_name_txt);
-            patient_age_txt = itemView.findViewById(R.id.patient_age_txt);
-            patient_dob_txt = itemView.findViewById(R.id.patient_dob_txt);
+            patient_id_txt2 = itemView.findViewById(R.id.patient_id_txt2);
+            patient_name_txt2 = itemView.findViewById(R.id.patient_name_txt2);
             mainLayout = itemView.findViewById(R.id.mainLayout);
             //Animate Recyclerview
             Animation translate_anim = AnimationUtils.loadAnimation(context, R.anim.translate_anim);

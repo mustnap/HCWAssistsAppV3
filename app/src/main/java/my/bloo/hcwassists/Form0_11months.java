@@ -33,7 +33,13 @@ public class Form0_11months extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_form011months);
+
+        if (getIntent().hasExtra("patient_name")) {
+            //Getting Data from Intent
+            getSupportActionBar().setTitle("Enter Reading for: " + getIntent().getStringExtra("patient_name"));
+        };
 
         calc_button = findViewById(R.id.btnCalc_01);
         getAndSetIntentData();
