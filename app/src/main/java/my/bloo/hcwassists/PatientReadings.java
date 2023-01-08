@@ -45,7 +45,12 @@ public class PatientReadings extends AppCompatActivity {
         reading_datetime = new ArrayList<>();
         reading_score = new ArrayList<>();
 
-        storeReadingInArraysSinglePatient();
+        if (getIntent().hasExtra("patient_name")) {
+            //Getting Data from Intent
+            getSupportActionBar().setTitle("Historical reading for: " + getIntent().getStringExtra("patient_name"));
+        };
+
+        storeReadingInArraysSinglePatient(getIntent().getStringExtra("patient_id").toString());
 
         singlePatientAdapter = new SinglePatientAdapter(PatientReadings.this, this, patient_id, reading_datetime, reading_score);
         recyclerView3.setAdapter(singlePatientAdapter);
@@ -61,9 +66,9 @@ public class PatientReadings extends AppCompatActivity {
         }
     }
 
-    void storeReadingInArraysSinglePatient() {
+    void storeReadingInArraysSinglePatient(String patientId) {
 
-        Cursor cursor = myDB.readPatientReadings(3);
+        Cursor cursor = myDB.readPatientReadings(Integer.valueOf(patientId));
 
         Log.d(TAG, " storeReadingInArraysSinglePatient ");
 

@@ -44,20 +44,10 @@ public class SinglePatientAdapter extends RecyclerView.Adapter<SinglePatientAdap
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, @SuppressLint("RecyclerView") final int position) {
-//        holder.patient_id_txt2.setText(String.valueOf(patient_id.get(position)));
+
         holder.patient_score_val.setText(String.valueOf(reading_score.get(position)));
         holder.patient_reading_dttm.setText(String.valueOf(reading_datetime.get(position)));
 
-//        holder.singlePatientReading.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent;
-//                intent = new Intent(context, Form0_11months.class);
-//                intent.putExtra("patient_id", String.valueOf(patient_id.get(position)));
-//
-//                activity.startActivityForResult(intent, 1);
-//            }
-//        });
     }
 
     @Override

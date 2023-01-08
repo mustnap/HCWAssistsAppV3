@@ -58,7 +58,7 @@ public class ReadingAdapter extends RecyclerView.Adapter<ReadingAdapter.MyViewHo
                 intent = new Intent(context, PatientReadings.class);
 
                 intent.putExtra("patient_id", String.valueOf(patient_id.get(position)));
-                intent.putExtra("name", String.valueOf(patient_name.get(position)));
+                intent.putExtra("patient_name", String.valueOf(patient_name.get(position)));
                 intent.putExtra("age", String.valueOf(patient_age.get(position)));
                 intent.putExtra("dob", String.valueOf(patient_dob.get(position)));
                 activity.startActivityForResult(intent, 1);
