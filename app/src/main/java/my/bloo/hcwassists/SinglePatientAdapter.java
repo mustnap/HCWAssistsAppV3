@@ -21,18 +21,16 @@ import java.util.ArrayList;
 
 public class SinglePatientAdapter extends RecyclerView.Adapter<SinglePatientAdapter.MyViewHolder> {
 
-
     private Context context;
     private Activity activity;
-    private ArrayList patient_id, total_score, datetime;
+    private ArrayList patient_id, reading_datetime, reading_score;
 
-    public SinglePatientAdapter(Activity activity, Context context, ArrayList patient_id,  ArrayList total_score,
-                                ArrayList datetime){
+    public SinglePatientAdapter(Activity activity, Context context, ArrayList patient_id,  ArrayList reading_datetime, ArrayList reading_score){
         this.activity = activity;
         this.context = context;
         this.patient_id = patient_id;
-        this.total_score = total_score;
-        this.datetime = datetime;
+        this.reading_score = reading_score;
+        this.reading_datetime = reading_datetime;
     }
 
     @NonNull
@@ -46,20 +44,20 @@ public class SinglePatientAdapter extends RecyclerView.Adapter<SinglePatientAdap
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, @SuppressLint("RecyclerView") final int position) {
-        holder.patient_id_txt.setText(String.valueOf(patient_id.get(position)));
-        holder.total_score_txt.setText(String.valueOf(total_score.get(position)));
-        holder.datetime_txt.setText(String.valueOf(datetime.get(position)));
+//        holder.patient_id_txt2.setText(String.valueOf(patient_id.get(position)));
+        holder.patient_score_val.setText(String.valueOf(reading_score.get(position)));
+        holder.patient_reading_dttm.setText(String.valueOf(reading_datetime.get(position)));
 
-        holder.singlePatientReading.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent;
-                intent = new Intent(context, Form0_11months.class);
-                intent.putExtra("patient_id", String.valueOf(patient_id.get(position)));
-
-                activity.startActivityForResult(intent, 1);
-            }
-        });
+//        holder.singlePatientReading.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent;
+//                intent = new Intent(context, Form0_11months.class);
+//                intent.putExtra("patient_id", String.valueOf(patient_id.get(position)));
+//
+//                activity.startActivityForResult(intent, 1);
+//            }
+//        });
     }
 
     @Override
@@ -69,14 +67,14 @@ public class SinglePatientAdapter extends RecyclerView.Adapter<SinglePatientAdap
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView patient_id_txt, total_score_txt, datetime_txt;
+        TextView patient_id_txt2, patient_score_val, patient_reading_dttm;
         LinearLayout singlePatientReading;
 
         MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            patient_id_txt = itemView.findViewById(R.id.patient_id_txt);
-            total_score_txt = itemView.findViewById(R.id.patient_score_val);
-            datetime_txt = itemView.findViewById(R.id.patient_reading_dttm);
+//            patient_id_txt2 = itemView.findViewById(R.id.patient_id_txt2);
+            patient_score_val = itemView.findViewById(R.id.patient_score_val);
+            patient_reading_dttm = itemView.findViewById(R.id.patient_reading_dttm);
             singlePatientReading = itemView.findViewById(R.id.singlePatientReading);
 
             //Animate Recyclerview

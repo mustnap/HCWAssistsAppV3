@@ -7,6 +7,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -24,6 +25,8 @@ import java.util.Date;
 public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     private Context context;
+    private static final String TAG = "MyDatabaseHelper";
+
     private static final String DATABASE_NAME = "Patients.db";
     private static final int DATABASE_VERSION = 1;
 
@@ -153,8 +156,11 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
 
     public Cursor readPatientReadings(Integer patientID){
-        String query = "SELECT * FROM " + TABLE_NAME2 + " WHERE patient_id = " + patientID + " ORDER BY " + COLUMN_READING_DATETIME + " DESC";
+        String query = "SELECT " + COLUMN_ID2 + ", " + COLUMN_READING_DATETIME + " ," + COLUMN_TOTAL_SCORE +   " FROM " + TABLE_NAME2 + " WHERE patient_id = " + patientID + " ORDER BY " + COLUMN_READING_DATETIME + " DESC";
         SQLiteDatabase db = this.getReadableDatabase();
+
+        Log.d(TAG, " readPatientReadings ");
+        Log.d(TAG, query);
 
         Cursor cursor = null;
         if(db != null){
