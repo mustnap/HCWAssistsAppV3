@@ -50,6 +50,16 @@ public class SinglePatientAdapter extends RecyclerView.Adapter<SinglePatientAdap
         holder.total_score_txt.setText(String.valueOf(total_score.get(position)));
         holder.datetime_txt.setText(String.valueOf(datetime.get(position)));
 
+        holder.singlePatientReading.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent;
+                intent = new Intent(context, Form0_11months.class);
+                intent.putExtra("patient_id", String.valueOf(patient_id.get(position)));
+
+                activity.startActivityForResult(intent, 1);
+            }
+        });
     }
 
     @Override
@@ -68,11 +78,13 @@ public class SinglePatientAdapter extends RecyclerView.Adapter<SinglePatientAdap
             total_score_txt = itemView.findViewById(R.id.patient_score_val);
             datetime_txt = itemView.findViewById(R.id.patient_reading_dttm);
             singlePatientReading = itemView.findViewById(R.id.singlePatientReading);
+
             //Animate Recyclerview
             Animation translate_anim = AnimationUtils.loadAnimation(context, R.anim.translate_anim);
             singlePatientReading.setAnimation(translate_anim);
         }
 
     }
+
 
 }

@@ -153,7 +153,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
 
     public Cursor readPatientReadings(Integer patientID){
-        String query = "SELECT * FROM " + TABLE_NAME2 + " WHERE PATIENT patient_id = '" + patientID + "' ORDER BY " + COLUMN_READING_DATETIME + " DESC";
+        String query = "SELECT * FROM " + TABLE_NAME2 + " WHERE patient_id = " + patientID + " ORDER BY " + COLUMN_READING_DATETIME + " DESC";
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = null;

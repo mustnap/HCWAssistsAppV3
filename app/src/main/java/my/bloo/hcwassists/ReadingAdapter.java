@@ -50,7 +50,7 @@ public class ReadingAdapter extends RecyclerView.Adapter<ReadingAdapter.MyViewHo
     public void onBindViewHolder(@NonNull final MyViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         holder.patient_id_txt2.setText(String.valueOf(patient_id.get(position)));
         holder.patient_name_txt2.setText(String.valueOf(patient_name.get(position)));
-        holder.mainLayout.setOnClickListener(new View.OnClickListener() {
+        holder.readingListLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent;
@@ -76,16 +76,16 @@ public class ReadingAdapter extends RecyclerView.Adapter<ReadingAdapter.MyViewHo
     class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView patient_id_txt2, patient_name_txt2;
-        LinearLayout mainLayout;
+        LinearLayout readingListLayout;
 
         MyViewHolder(@NonNull View itemView) {
             super(itemView);
             patient_id_txt2 = itemView.findViewById(R.id.patient_id_txt2);
             patient_name_txt2 = itemView.findViewById(R.id.patient_name_txt2);
-            mainLayout = itemView.findViewById(R.id.mainLayout);
+            readingListLayout = itemView.findViewById(R.id.readingListLayout);
             //Animate Recyclerview
             Animation translate_anim = AnimationUtils.loadAnimation(context, R.anim.translate_anim);
-            mainLayout.setAnimation(translate_anim);
+            readingListLayout.setAnimation(translate_anim);
         }
 
     }
