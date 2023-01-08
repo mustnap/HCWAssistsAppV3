@@ -14,7 +14,18 @@
         <!-- Customize your theme here. -->
     </style>
 
-
+    <style name="Theme.HCWAssists.v2" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/teal_300</item>
+        <item name="colorPrimaryVariant">@color/teal_100</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
     <!-- Alert Dialog -->
     <style name="MyThemeOverlay.MaterialComponents.MaterialAlertDialog.Red" parent="@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog">
         <item name="materialAlertDialogBodyTextStyle">@style/BodyTextAppearance.MaterialComponents.Body2.Red</item>

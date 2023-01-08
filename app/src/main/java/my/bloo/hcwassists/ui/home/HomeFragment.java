@@ -32,7 +32,6 @@ public class HomeFragment extends Fragment {
     ArrayList<String> patient_id, patient_name, patient_age, patient_dob;
     CustomAdapter customAdapter;
 
-
     private FragmentHomeBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -46,14 +45,13 @@ public class HomeFragment extends Fragment {
         recyclerView = root.findViewById(R.id.recyclerView);
         add_button = root.findViewById(R.id.add_button);
 
-       add_button.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                     Intent intent = new Intent(getActivity(), AddNewPatient.class);
-                     startActivity(intent);
-
-             }
-         });
+        add_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), AddNewPatient.class);
+                startActivity(intent);
+            }
+        });
 
         myDB = new MyDatabaseHelper(getContext());
         patient_id = new ArrayList<>();
@@ -62,7 +60,6 @@ public class HomeFragment extends Fragment {
         patient_dob = new ArrayList<>();
 
         storeDataInArrays();
-
 
         customAdapter = new CustomAdapter(getActivity(), getContext(), patient_id, patient_name, patient_age,
                 patient_dob);
