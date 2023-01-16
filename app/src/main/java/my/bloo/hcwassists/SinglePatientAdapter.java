@@ -1,10 +1,13 @@
 package my.bloo.hcwassists;
 
+import static android.content.ContentValues.TAG;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +20,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class SinglePatientAdapter extends RecyclerView.Adapter<SinglePatientAdapter.MyViewHolder> {
@@ -46,7 +52,17 @@ public class SinglePatientAdapter extends RecyclerView.Adapter<SinglePatientAdap
     public void onBindViewHolder(@NonNull final MyViewHolder holder, @SuppressLint("RecyclerView") final int position) {
 
         holder.patient_score_val.setText(String.valueOf(reading_score.get(position)));
-        holder.patient_reading_dttm.setText(String.valueOf(reading_datetime.get(position)));
+
+        LocalDateTime dateTime = LocalDateTime.parse(String.valueOf(reading_datetime.get(position)));
+        Log.d(TAG, " dateTime " + dateTime.toString() );
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MMM/dd HH:mm:ss");
+        String formatDateTime = dateTime.format(formatter);
+
+        Log.d(TAG, " formatDateTime " + formatDateTime );
+
+//        holder.patient_reading_dttm.setText(String.valueOf(reading_datetime.get(position)));
+        holder.patient_reading_dttm.setText(String.valueOf(formatDateTime));
 
     }
 
