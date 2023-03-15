@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Confidentiality">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Non-Disclosure Agreement"
+        app:layout_constraintBottom_toTopOf="@+id/tvConf01"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="34dp" />
+
+    <TextView
+        android:id="@+id/tvConf01"
+        android:layout_width="352dp"
+        android:layout_height="530dp"
+        android:text="Exchange of Information. The parties agree to exchange Confidential Information for the purpose of obtaining patient demographic and vital signs readings for patients in accordance with this Agreement.
+Confidential Information. Confidential Information means all material, non-public, business-related information, written or oral, whether or not it is marked that is disclosed or made available to the receiving party, directly or indirectly, through any means of communication or observation.
+Excluded Information. The restrictions of this agreement on the use and disclosure of Confidential Information will not apply to information that without the breach of this agreement if the information is:\n
+●    is already known to the receiving party,\n
+●    is or becomes publicly known,\n
+●    is or subsequently comes into the possession of the receiving party from a third party, or\n
+●    is independently developed by the receiving party without the use of Confidential Information.\n
+Burden of Proof. The receiving party will have the burden of proof relating to all exceptions to the definition of Confidential Information."
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="86dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

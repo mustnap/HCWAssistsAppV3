@@ -13,6 +13,20 @@
         android:theme="@style/Theme.HCWAssists.v2"
         tools:targetApi="31">
         <activity
+            android:name=".Creators"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Confidentiality"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".PatientReadings"
             android:exported="false">
             <meta-data
@@ -25,6 +39,7 @@
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -74,10 +89,11 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

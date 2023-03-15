@@ -1,20 +1,28 @@
 package my.bloo.hcwassists.ui.notifications;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import my.bloo.hcwassists.AddNewPatient;
+import my.bloo.hcwassists.Confidentiality;
+import my.bloo.hcwassists.Creators;
+import my.bloo.hcwassists.R;
 import my.bloo.hcwassists.databinding.FragmentNotificationsBinding;
 
 public class NotificationsFragment extends Fragment {
 
     private FragmentNotificationsBinding binding;
+
+    Button confidentiality_button, creators_button, about_button;
 
     public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
         NotificationsViewModel notificationsViewModel = new ViewModelProvider(this).get(NotificationsViewModel.class);
@@ -23,7 +31,25 @@ public class NotificationsFragment extends Fragment {
         View root = binding.getRoot();
 
         final TextView textView = binding.textNotifications;
-//        notificationsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+
+        confidentiality_button = root.findViewById(R.id.conf_agreement_button);
+        confidentiality_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Confidentiality.class);
+                startActivity(intent);
+            }
+        });
+
+        creators_button = root.findViewById(R.id.creators_page_button);
+        creators_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Creators.class);
+                startActivity(intent);
+            }
+        });
+
         return root;
     }
 

@@ -366,7 +366,7 @@ public class Form0_11months extends AppCompatActivity {
         else {
             new MaterialAlertDialogBuilder(this, R.style.MyThemeOverlay_MaterialComponents_MaterialAlertDialog_Red)
                     .setTitle("Assesment:")
-                    .setMessage("Please fill all fields ")
+                    .setMessage("Please fill all fields")
                     .setPositiveButton("Ok", /* listener = */ null)
                     .show();
             return;
@@ -410,7 +410,7 @@ public class Form0_11months extends AppCompatActivity {
                     .setPositiveButton("Ok", /* listener = */ null)
                     .show();
         }
-        
+
     }
 
     void getAndSetIntentData() {

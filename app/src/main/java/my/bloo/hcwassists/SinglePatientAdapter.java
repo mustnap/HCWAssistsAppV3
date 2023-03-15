@@ -61,7 +61,6 @@ public class SinglePatientAdapter extends RecyclerView.Adapter<SinglePatientAdap
 
         Log.d(TAG, " formatDateTime " + formatDateTime );
 
-//        holder.patient_reading_dttm.setText(String.valueOf(reading_datetime.get(position)));
         holder.patient_reading_dttm.setText(String.valueOf(formatDateTime));
 
     }
