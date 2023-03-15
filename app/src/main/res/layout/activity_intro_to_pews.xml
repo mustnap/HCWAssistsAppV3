@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:padding="16dp"
+tools:context=".IntroToPews">
+
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="Introduction to Paediatric Early Warning Signs Score (PEWS)\n"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tvConf01"
+            tools:layout_editor_absoluteX="34dp" />
+
+        <TextView
+            android:id="@+id/tvConf01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PEWS score is a validated objective tool that represent a “track-and-trigger system”;\n
+“Track” by identifying children at risk for clinical deterioration.\n
+“Trigger” by determining the action needed to prevent further deterioration.\n
+Benefits of using PEWS score includes;\n
+●	 Improve clinical outcomes and hence reduce morbidity and mortality.\n
+●	Promote earlier intervention and transfer to Paediatric Intensive Care Unit (PICU).\n
+●	Enhance multidisciplinary team working, communication, and confidence in recognising and making decisions about deteriorating children.\n
+PEWS score consists of selected age-appropriate routine parameters such as heart rate, blood pressure, respiratory rate, evidence of respiratory distress, temperature, oxygen saturation, and mental status. A higher PEWS indicates a worse clinical condition and should be followed up by early intervention by medical staff to prevent further deterioration.\n
+Reference\n
+https://www.clinicalguidelines.scot.nhs.uk/nhsggc-guidelines/nhsggc-guidelines/surgery/paediatric-early-warning-score-pews/\n"
+            tools:layout_editor_absoluteX="34dp"
+            tools:layout_editor_absoluteY="86dp" />
+
+    </LinearLayout>
+
+
+</ScrollView>
+</LinearLayout>

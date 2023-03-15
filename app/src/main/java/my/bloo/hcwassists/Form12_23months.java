@@ -32,6 +32,9 @@ public class Form12_23months extends AppCompatActivity {
     int checkedRadioGroupConsciusLevel, intConsciousOptionSelected;
     int checkedRadioGroupTemperature, intTemperatureOptionSelected;
 
+    boolean boolSpo2NotEmpty, boolBloodPressureNotEmpty, boolHeartRateNotEmpty,boolRespRateNotEmpty,boolTempRangeNotEmpty,
+            boolConsciousNotEmpty, boolOxygenNotEmpty, boolCapilaryNotEmpty, boolCanAddtoDB;
+
     TextView patientId_tV;
 
     @Override
@@ -45,11 +48,19 @@ public class Form12_23months extends AppCompatActivity {
         };
 
         calc_button = findViewById(R.id.btnCalc_02);
+
         getAndSetIntentData();
+        setInitialValue();
+
         calc_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 confirmDialog2();
+
+                if(!boolCanAddtoDB) {
+                    return;
+                }
+
                 MyDatabaseHelper myDB = new MyDatabaseHelper(getApplicationContext());
                 int totalScore = intSpo2Score + intBloodPressureScore + intHearRateScore + intRespiratoryScore + intTempRangeScore + intConsciousScore + intOxygenScore + intCapilaryScore;
 
@@ -60,58 +71,94 @@ public class Form12_23months extends AppCompatActivity {
     }
 
 
+    void setInitialValue() {
+
+        boolSpo2NotEmpty = false;
+        boolBloodPressureNotEmpty = false;
+        boolHeartRateNotEmpty = false ;
+        boolRespRateNotEmpty = false ;
+        boolTempRangeNotEmpty = false;
+        boolConsciousNotEmpty= false;
+        boolOxygenNotEmpty = false;
+        boolCapilaryNotEmpty= false;
+        boolCanAddtoDB = false;
+    }
+
+
     void calculateSpo2() {
 
         spo2_input = findViewById(R.id.text_input_spo2_02);
 
-        int intSpo2Val = Integer.valueOf(spo2_input.getText().toString().trim());
-
-        if (intSpo2Val >= 94) {
-            intSpo2Score = 0;
-        } else if ((intSpo2Val >= 92 && intSpo2Val <= 93)) {
-            intSpo2Score = 1;
-        } else if ((intSpo2Val < 92)) {
-            intSpo2Score = 3;
-        } else {
-            intSpo2Score = 0;
+        if(spo2_input.getText().toString().trim().length() > 1 ) {
+            boolSpo2NotEmpty = true;
         }
+
+        if (boolSpo2NotEmpty) {
+            int intSpo2Val = Integer.valueOf(spo2_input.getText().toString().trim());
+
+            if (intSpo2Val >= 94) {
+                intSpo2Score = 0;
+            } else if ((intSpo2Val >= 92 && intSpo2Val <= 93)) {
+                intSpo2Score = 1;
+            } else if ((intSpo2Val < 92)) {
+                intSpo2Score = 3;
+            } else {
+                intSpo2Score = 0;
+            }
+        }
+
     }
 
 
     void calculateBloodPressure() {
         bloodpressue_input = findViewById(R.id.text_input_bp_02);
 
-        int intBPVal = Integer.valueOf(bloodpressue_input.getText().toString().trim());
-
-        if (intBPVal >= 70 && intBPVal <= 100) {
-            intBloodPressureScore = 0;
-        } else if ((intBPVal > 100 && intBPVal <= 110)) {
-            intBloodPressureScore = 1;
-        } else if ((intBPVal > 110)) {
-            intBloodPressureScore = 3;
-        } else if ((intBPVal < 60)) {
-            intBloodPressureScore = 3;
-        } else if ((intBPVal >= 60 && intBPVal < 70)) {
-            intBloodPressureScore = 1;
+        if(bloodpressue_input.getText().toString().trim().length() > 1 ) {
+            boolBloodPressureNotEmpty = true;
         }
+
+        if (boolSpo2NotEmpty) {
+            int intBPVal = Integer.valueOf(bloodpressue_input.getText().toString().trim());
+
+            if (intBPVal >= 70 && intBPVal <= 100) {
+                intBloodPressureScore = 0;
+            } else if ((intBPVal > 100 && intBPVal <= 110)) {
+                intBloodPressureScore = 1;
+            } else if ((intBPVal > 110)) {
+                intBloodPressureScore = 3;
+            } else if ((intBPVal < 60)) {
+                intBloodPressureScore = 3;
+            } else if ((intBPVal >= 60 && intBPVal < 70)) {
+                intBloodPressureScore = 1;
+            }
+        }
+
     }
 
     void calculateHeartRate() {
         heartRate_input = findViewById(R.id.text_input_hr_02);
 
-        int intHRVal = Integer.valueOf(heartRate_input.getText().toString().trim());
-
-        if (intHRVal >= 100 && intHRVal <= 150) {
-            intHearRateScore = 0;
-        } else if (intHRVal > 150 && intHRVal <= 160) {
-            intHearRateScore = 1;
-        } else if (intHRVal > 160) {
-            intHearRateScore = 3;
-        } else if (intHRVal >= 80 && intHRVal <= 100) {
-            intHearRateScore = 1;
-        } else if (intHRVal < 80) {
-            intHearRateScore = 3;
+        if(heartRate_input.getText().toString().trim().length() > 1 ) {
+            boolHeartRateNotEmpty = true;
         }
+
+        if (boolHeartRateNotEmpty) {
+            int intHRVal = Integer.valueOf(heartRate_input.getText().toString().trim());
+
+            if (intHRVal >= 100 && intHRVal <= 150) {
+                intHearRateScore = 0;
+            } else if (intHRVal > 150 && intHRVal <= 160) {
+                intHearRateScore = 1;
+            } else if (intHRVal > 160) {
+                intHearRateScore = 3;
+            } else if (intHRVal >= 80 && intHRVal <= 100) {
+                intHearRateScore = 1;
+            } else if (intHRVal < 80) {
+                intHearRateScore = 3;
+            }
+        }
+
+
 
     }
 
@@ -119,24 +166,33 @@ public class Form12_23months extends AppCompatActivity {
     void calculateRespiratoryRate() {
         respi_input = findViewById(R.id.text_input_resp_02);
 
-        int intRespiVal = Integer.valueOf(respi_input.getText().toString().trim());
-
-        if (intRespiVal > 60 && intRespiVal < 20) {
-            intRespiratoryScore = 3;
-        } else if (intRespiVal > 40 && intRespiVal <= 60) {
-            intRespiratoryScore = 1;
-        } else if (intRespiVal > 22 && intRespiVal <= 40) {
-            intRespiratoryScore = 0;
-        } else if (intRespiVal > 20 && intRespiVal <= 22) {
-            intRespiratoryScore = 1;
-        } else if (intRespiVal < 20) {
-            intRespiratoryScore = 3;
+        if(respi_input.getText().toString().trim().length() > 1 ) {
+            boolRespRateNotEmpty = true;
         }
+
+        if (boolRespRateNotEmpty) {
+            int intRespiVal = Integer.valueOf(respi_input.getText().toString().trim());
+
+            if (intRespiVal > 60 && intRespiVal < 20) {
+                intRespiratoryScore = 3;
+            } else if (intRespiVal > 40 && intRespiVal <= 60) {
+                intRespiratoryScore = 1;
+            } else if (intRespiVal > 22 && intRespiVal <= 40) {
+                intRespiratoryScore = 0;
+            } else if (intRespiVal > 20 && intRespiVal <= 22) {
+                intRespiratoryScore = 1;
+            } else if (intRespiVal < 20) {
+                intRespiratoryScore = 3;
+            }
+        }
+
+
     }
 
 
     void calculateTemperature() {
         tempRange_radioGroup = (RadioGroup) findViewById(R.id.radioGroupTempRange_02);
+
         checkedRadioGroupTemperature = tempRange_radioGroup.getCheckedRadioButtonId();
         intRb01 = findViewById(R.id.rBtn02_tR_01_Less365).getId();
         intRb02 = findViewById(R.id.rBtn02_tR_02_36_37).getId();
@@ -157,19 +213,23 @@ public class Form12_23months extends AppCompatActivity {
             selected = 5;
         }
 
-        intTemperatureOptionSelected = selected;
+        if(selected > 0) {
+            boolTempRangeNotEmpty = true;
+            intTemperatureOptionSelected = selected;
 
-        if (intTemperatureOptionSelected == 1) {
-            intTempRangeScore = 3;
-        } else if (intTemperatureOptionSelected == 2) {
-            intTempRangeScore = 0;
-        } else if (intTemperatureOptionSelected == 3) {
-            intTempRangeScore = 1;
-        } else if (intTemperatureOptionSelected == 4) {
-            intTempRangeScore = 1;
-        } else if (intTemperatureOptionSelected == 5) {
-            intTempRangeScore = 3;
+            if (intTemperatureOptionSelected == 1) {
+                intTempRangeScore = 3;
+            } else if (intTemperatureOptionSelected == 2) {
+                intTempRangeScore = 0;
+            } else if (intTemperatureOptionSelected == 3) {
+                intTempRangeScore = 1;
+            } else if (intTemperatureOptionSelected == 4) {
+                intTempRangeScore = 1;
+            } else if (intTemperatureOptionSelected == 5) {
+                intTempRangeScore = 3;
+            }
         }
+
 
     }
 
@@ -194,17 +254,21 @@ public class Form12_23months extends AppCompatActivity {
             selected = 5;
         }
 
-        intConsciousOptionSelected = selected;
+        if(selected > 0) {
+            boolConsciousNotEmpty = true;
+            intConsciousOptionSelected = selected;
 
-        if (intConsciousOptionSelected == 1) {
-            intConsciousScore = 0;
-        } else if (intConsciousOptionSelected == 2) {
-            intConsciousScore = 0;
-        } else if (intConsciousOptionSelected == 3) {
-            intConsciousScore = 3;
-        } else if (intConsciousOptionSelected == 4) {
-            intConsciousScore = 3;
+            if (intConsciousOptionSelected == 1) {
+                intConsciousScore = 0;
+            } else if (intConsciousOptionSelected == 2) {
+                intConsciousScore = 0;
+            } else if (intConsciousOptionSelected == 3) {
+                intConsciousScore = 3;
+            } else if (intConsciousOptionSelected == 4) {
+                intConsciousScore = 3;
+            }
         }
+
 
 
     }
@@ -232,19 +296,23 @@ public class Form12_23months extends AppCompatActivity {
             selected = 5;
         }
 
-        intOxygenOptionSelected = selected;
+        if(selected > 0) {
+            boolOxygenNotEmpty = true;
+            intOxygenOptionSelected = selected;
 
-        if (intOxygenOptionSelected == 1) {
-            intOxygenScore = 0;
-        } else if (intOxygenOptionSelected == 2) {
-            intOxygenScore = 1;
-        } else if (intOxygenOptionSelected == 3) {
-            intOxygenScore = 3;
-        } else if (intOxygenOptionSelected == 4) {
-            intOxygenScore = 3;
-        } else if (intOxygenOptionSelected == 5) {
-            intOxygenScore = 3;
+            if (intOxygenOptionSelected == 1) {
+                intOxygenScore = 0;
+            } else if (intOxygenOptionSelected == 2) {
+                intOxygenScore = 1;
+            } else if (intOxygenOptionSelected == 3) {
+                intOxygenScore = 3;
+            } else if (intOxygenOptionSelected == 4) {
+                intOxygenScore = 3;
+            } else if (intOxygenOptionSelected == 5) {
+                intOxygenScore = 3;
+            }
         }
+
 
     }
 
@@ -270,20 +338,28 @@ public class Form12_23months extends AppCompatActivity {
         } else if (checkedRadioGroupCapilary == intRb05) {
             selected = 5;
         }
-        intCapilaryOptionSelected = selected;
 
-        if (intCapilaryOptionSelected == 1) {
-            intCapilaryScore = 0;
-        } else if (intCapilaryOptionSelected == 2) {
-            intCapilaryScore = 1;
-        } else if (intCapilaryOptionSelected == 3) {
-            intCapilaryScore = 3;
+        if(selected > 0) {
+            boolCapilaryNotEmpty = true;
+
+            intCapilaryOptionSelected = selected;
+
+            if (intCapilaryOptionSelected == 1) {
+                intCapilaryScore = 0;
+            } else if (intCapilaryOptionSelected == 2) {
+                intCapilaryScore = 1;
+            } else if (intCapilaryOptionSelected == 3) {
+                intCapilaryScore = 3;
+            }
+
         }
 
     }
 
 
     void confirmDialog2() {
+        setInitialValue();
+
         calculateOxygen();
         calculateCapilary();
         calculateConsciousLevel();
@@ -295,6 +371,17 @@ public class Form12_23months extends AppCompatActivity {
 
         String strRecommendation = "";
 
+        if(boolSpo2NotEmpty && boolBloodPressureNotEmpty && boolHeartRateNotEmpty && boolRespRateNotEmpty && boolTempRangeNotEmpty && boolConsciousNotEmpty && boolOxygenNotEmpty && boolCapilaryNotEmpty)
+        {
+            boolCanAddtoDB = true;
+        }       else {
+            new MaterialAlertDialogBuilder(this, R.style.MyThemeOverlay_MaterialComponents_MaterialAlertDialog_Red)
+                    .setTitle("Assesment:")
+                    .setMessage("Please fill all fields")
+                    .setPositiveButton("Ok", /* listener = */ null)
+                    .show();
+            return;
+        }
 
         int totalScore = intSpo2Score + intBloodPressureScore + intHearRateScore + intRespiratoryScore + intTempRangeScore + intConsciousScore + intOxygenScore + intCapilaryScore;
 

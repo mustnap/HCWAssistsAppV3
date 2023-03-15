@@ -1,41 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Creators">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:padding="16dp"
+tools:context=".Creators">
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="wrap_content"
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Appendix A"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="47dp" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Non-Disclosure Agreement"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="101dp" />
+        <TextView
+            android:id="@+id/tvCreator01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="Creators of PEWS SaveKids App"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvConf01"
+            tools:layout_editor_absoluteX="34dp" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="351dp"
-        android:layout_height="378dp"
-        android:text="Exchange of Information. The parties agree to exchange Confidential Information for the purpose of obtaining patient demographic and vital signs readings for patients in accordance with this Agreement.
-Confidential Information. Confidential Information means all material, non-public, business-related information, written or oral, whether or not it is marked that is disclosed or made available to the receiving party, directly or indirectly, through any means of communication or observation.
-Excluded Information. The restrictions of this agreement on the use and disclosure of Confidential Information will not apply to information that without the breach of this agreement if the information is:\n
-●    is already known to the receiving party,\n
-●    is or becomes publicly known,\n
-●    is or subsequently comes into the possession of the receiving party from a third party, or\n
-●    is independently developed by the receiving party without the use of Confidential Information.\n
-Burden of Proof. The receiving party will have the burden of proof relating to all exceptions to the definition of Confidential Information."
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="124dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvCreator02"
+            android:layout_width="352dp"
+            android:layout_height="wrap_content"
+            android:text="We are a team of paediatricians, a public health specialist and an application developer dedicated to saving children’s lives. We aspire to ease the triaging process and help healthcare professionals detect children at risk of deterioration early, to allow timely escalation and action. \n"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="34dp"
+            tools:layout_editor_absoluteY="86dp" />
+
+        <TextView
+            android:id="@+id/tvCreator03"
+            android:layout_width="352dp"
+            android:layout_height="wrap_content"
+            android:text="Dr Aliyyah Mohammad Khuzaini\n
+MBChB (Bristol), MRCPCH (UK)\n
+Paediatric Unit, Universiti Sains Islam Malaysia\n"
+            tools:layout_editor_absoluteX="34dp"
+            tools:layout_editor_absoluteY="86dp" />
+
+        <TextView
+            android:id="@+id/tvCreator04"
+            android:layout_width="352dp"
+            android:layout_height="wrap_content"
+            android:text="Dr Halimah Abdul-Halim\n
+MBChB (Liverpool), MRCPCH (UK)\n
+Paediatric Unit, Universiti Sains Islam Malaysia\n"
+            tools:layout_editor_absoluteX="34dp"
+            tools:layout_editor_absoluteY="86dp" />
+    </LinearLayout>
+
+
+</ScrollView>
+</LinearLayout>

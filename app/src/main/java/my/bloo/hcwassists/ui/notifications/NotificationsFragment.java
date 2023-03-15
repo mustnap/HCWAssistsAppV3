@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider;
 import my.bloo.hcwassists.AddNewPatient;
 import my.bloo.hcwassists.Confidentiality;
 import my.bloo.hcwassists.Creators;
+import my.bloo.hcwassists.IntroToPews;
 import my.bloo.hcwassists.R;
 import my.bloo.hcwassists.databinding.FragmentNotificationsBinding;
 
@@ -22,7 +23,7 @@ public class NotificationsFragment extends Fragment {
 
     private FragmentNotificationsBinding binding;
 
-    Button confidentiality_button, creators_button, about_button;
+    Button confidentiality_button, creators_button, intro_button;
 
     public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
         NotificationsViewModel notificationsViewModel = new ViewModelProvider(this).get(NotificationsViewModel.class);
@@ -46,6 +47,15 @@ public class NotificationsFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), Creators.class);
+                startActivity(intent);
+            }
+        });
+
+        intro_button = root.findViewById(R.id.intro_button);
+        intro_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), IntroToPews.class);
                 startActivity(intent);
             }
         });

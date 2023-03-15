@@ -1,34 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".Confidentiality">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:text="Non-Disclosure Agreement"
-        app:layout_constraintBottom_toTopOf="@+id/tvConf01"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="34dp" />
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tvConf01"
-        android:layout_width="352dp"
-        android:layout_height="530dp"
-        android:text="Exchange of Information. The parties agree to exchange Confidential Information for the purpose of obtaining patient demographic and vital signs readings for patients in accordance with this Agreement.
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvConf01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="Non-Disclosure Agreement"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/tvConf01"
+                tools:layout_editor_absoluteX="34dp" />
+
+            <TextView
+                android:id="@+id/tvConf02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Exchange of Information. The parties agree to exchange Confidential Information for the purpose of obtaining patient demographic and vital signs readings for patients in accordance with this Agreement.
 Confidential Information. Confidential Information means all material, non-public, business-related information, written or oral, whether or not it is marked that is disclosed or made available to the receiving party, directly or indirectly, through any means of communication or observation.
 Excluded Information. The restrictions of this agreement on the use and disclosure of Confidential Information will not apply to information that without the breach of this agreement if the information is:\n
 ●    is already known to the receiving party,\n
 ●    is or becomes publicly known,\n
 ●    is or subsequently comes into the possession of the receiving party from a third party, or\n
-●    is independently developed by the receiving party without the use of Confidential Information.\n
-Burden of Proof. The receiving party will have the burden of proof relating to all exceptions to the definition of Confidential Information."
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="86dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+●    is independently developed by the receiving party without the use of Confidential Information.\n"
+                tools:layout_editor_absoluteX="34dp"
+                tools:layout_editor_absoluteY="86dp" />
+
+            <TextView
+                android:id="@+id/tvConf03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Burden of Proof. The receiving party will have the burden of proof relating to all exceptions to the definition of Confidential Information. \n
+1.  Use of information\n
+Confidentiality Obligation. The receiving party will hold Confidential Information in confidence. \n
+Limitation on Use. The receiving party may only use the Confidential Information in accordance with the terms of this agreement and solely for the Purpose. \n
+Standard of Care. The receiving party will exercise reasonable care to protect the Confidential Information from any loss or unauthorized disclosure. \n
+Notification of Disclosure. The receiving party shall promptly notify the disclosing party if it discovers any loss or unauthorized disclosure of Confidential Information. \n
+No Modification of Confidential Information. The receiving party will not copy, decompile, modify, reverse engineer, or create derivative works out of any Confidential Information without the disclosing party's written consent.\n
+Return or Destruction of Confidential Information. On the expiration or termination of this agreement, or on the disclosing party's request, the receiving party shall \n
+●    promptly return to the disclosing party all Confidential Information provided by the disclosing party, \n
+●    destroy all copies it made of Confidential Information, \n
+●    and if requested by the disclosing party, deliver to the disclosing party a certificate executed by the receiving party confirming compliance with the return or destruction obligation under this section.\n"
+                tools:layout_editor_absoluteX="34dp"
+                tools:layout_editor_absoluteY="86dp" />
+
+            <TextView
+                android:id="@+id/tvConf04"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Required Disclosure Notification of Disclosure. The receiving party may disclose Confidential Information if it is compelled by Law to disclose any Confidential Information if the receiving party\n
+●    provides the disclosing party with prompt written notice so that the disclosing party may seek a protective order or other appropriate remedy and/or waive compliance with the provisions of this agreement,\n
+●    cooperates with the disclosing party to obtain a protective order or another appropriate remedy.\n
+Limited Disclosure. If the parties cannot obtain a protective order, another appropriate remedy, or otherwise fail to quash the legal process requiring disclosure, the receiving party may disclose the requested Confidential Information only to the extent necessary to satisfy the request.\n
+Permitted Disclosure. The receiving party may disclose Confidential Information if and to the extent that the disclosing party consents in writing to such disclosure, or to the receiving party's officers, directors, employees, Affiliates, or representatives who\n
+●    need-to-know that Confidential Information in furtherance of the Purpose.\n
+●    have been informed of the confidentiality obligations of this agreement, and\n
+●    agree to abide and be bound by the provisions of this agreement. \n
+Neither party may assign this agreement or any of their rights or obligations under this agreement without the other party's written consent.\n
+This agreement shall be governed, construed, and enforced in accordance with the laws of Malaysia.\n
+The failure or neglect by a party to enforce any of the rights under this agreement will not be deemed to be a waiver of that party's rights.\n
+If any part of this agreement is declared unenforceable or invalid, the remainder will continue to be valid and enforceable. \n
+ \n
+          I hereby agree with the agreement with this contract, and and will act to abide with the terms and conditions presented here. \n
+ 	 \n"
+                tools:layout_editor_absoluteX="34dp"
+                tools:layout_editor_absoluteY="86dp" />
+        </LinearLayout>
+
+
+    </ScrollView>
+</LinearLayout>
